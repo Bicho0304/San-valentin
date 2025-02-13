@@ -10,6 +10,7 @@
             background-color: #ffcccc;
             text-align: center;
             font-family: 'Arial', sans-serif;
+            overflow: hidden;
         }
         .container {
             margin-top: 50px;
@@ -30,15 +31,36 @@
             margin-top: 20px;
             transition: opacity 2s;
         }
+        .letter {
+            width: 250px;
+            height: 200px;
+            background: url('https://example.com/love-letter.png') no-repeat center;
+            background-size: cover;
+            margin: auto;
+            position: relative;
+            opacity: 0;
+            animation: drawLetter 3s forwards ease-in-out 1s;
+        }
+        @keyframes drawLetter {
+            0% { opacity: 0; transform: scale(0.5); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .romantic-img {
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Para la persona más especial</h1>
+        <div class="letter"></div>
         <button onclick="showMessage()">Haz clic para ver la carta</button>
         <p id="msg1" class="message hidden">Desde que entraste en mi vida, todo es más hermoso.</p>
         <p id="msg2" class="message hidden">Cada día a tu lado es un regalo que valoro infinitamente.</p>
         <p id="msg3" class="message hidden">Te amo con todo mi corazón. ¡Feliz San Valentín!</p>
+        <img src="https://example.com/heart.png" alt="Corazón" class="romantic-img">
     </div>
 
     <script>
